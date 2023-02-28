@@ -7,6 +7,10 @@ type Post = {
   date: string;
 };
 
+export async function generateStaticParams() {
+  const ids: string[] = ["1", "2"];
+  return ids.map((id) => ({ id: id }));
+}
 async function getPost(id: string) {
   const post = posts.find((post: Post) => post.id === id);
   return post;
